@@ -1,0 +1,46 @@
+@mixin centerFlex($type: flex) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hoverFocusColor(
+  $color: $activ-color
+) {
+  &:hover,
+  &:focus {
+    color: $color;
+  }
+}
+
+@mixin list-position-flex-mr(
+  $margin-right: 30px
+) {
+  display: flex;
+  & > :not(:last-child) {
+    margin-right: $margin-right;
+  }
+}
+
+$list-section: "hero", "advantage",
+  "directions", "team", "customer",
+  "portfolio";
+
+@each $elem in $list-section {
+  .#{$elem} {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media screen and (min-width: 1200px) {
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+  }
+}
+
+@mixin calc_width($value) {
+  width: calc(
+    (100% - $value * 30px) / $value
+  );
+}
+
+// hero ,advantage, directions, team, customer

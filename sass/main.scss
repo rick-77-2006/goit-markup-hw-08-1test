@@ -1,0 +1,25 @@
+@import "./utils/var";
+@import "./plaseholders/most-used";
+@import "./mixim/mix";
+
+// global class in the progect
+@import "./base/global";
+@import "./components/social_icon_list";
+//main page
+// header block
+@import "./components/header";
+// main block
+@import "./components/hero";
+@import "./components/advantege";
+@import "./components/directions";
+@import "./components/team";
+@import "./components/customers";
+// // fooret block
+@import "./components/footer";
+// // modal backdrop
+@import "./components/backdrop";
+// // Portfolio page
+// // navigation block with button
+@import "./components/portfolio_navigation";
+// // product creating by the studio
+@import "./components/product_list";

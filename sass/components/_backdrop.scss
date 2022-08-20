@@ -1,0 +1,201 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: $backdrop-bg-color;
+  visibility: visible;
+  transform: opacity(1);
+  transition: opacity $time-and-cubic,
+    visibility $time-and-cubic;
+  &__content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+      scale(1);
+    @media screen and (max-width: 767px) {
+      width: calc(100% - 30px);
+      max-width: 450px;
+    }
+    @media screen and (min-width: 768px) {
+      min-width: 528px;
+    }
+    min-height: 581px;
+
+    background-color: $white-in-progect;
+    box-shadow: 0px 1px 3px
+        rgba(0, 0, 0, 0.12),
+      0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transition: transform
+      $time-and-cubic;
+  }
+
+  &__close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    @include centerFlex();
+
+    width: 30px;
+    height: 30px;
+
+    background: $white-in-progect;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: #000;
+
+    transition: color $time-and-cubic;
+  }
+
+  &__icon-close {
+    display: block;
+    width: 11px;
+    height: 11px;
+  }
+
+  &__close:hover &__icon-close {
+    color: $activ-color;
+  }
+
+  &.is-hidden .content-box {
+    transform: translate(-50%, -50%)
+      scale(1.1);
+  }
+}
+
+.customers {
+  padding: 40px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 12px;
+    @media screen and (min-width: 768px) {
+      line-height: 1.15;
+    }
+  }
+
+  &__field {
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 12px;
+    color: $secondary-text-color;
+    margin-bottom: 4px;
+  }
+
+  &__input-cover {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    height: $hight-input;
+    padding-left: 42px;
+    width: 100%;
+    border: 1px solid
+      rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    outline: none;
+    transition: border-color
+      $time-and-cubic;
+  }
+
+  &__input:focus {
+    border-color: $activ-color;
+  }
+
+  &__input:focus + &__svg {
+    color: $activ-color;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 56px;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    transition: color $time-and-cubic;
+  }
+
+  &__textarea {
+    resize: none;
+    height: 3 * $hight-input;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+}
+
+.check {
+  margin-bottom: 30px;
+  font-size: 12px;
+  line-height: 1.17;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 14px;
+    line-height: 1.71;
+    font-size: 14px;
+  }
+  &__label {
+    @extend %vertical_flex_position;
+  }
+
+  &__icon {
+    display: inline-block;
+
+    margin-right: 8.38px;
+    min-width: 16px;
+    height: 15px;
+    border-radius: 2px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px
+      rgba(0, 0, 0, 0.25);
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__input:checked + &__icon {
+    background-img: url(../img/svg/icon-check.svg);
+    background-color: $activ-color;
+    border-color: $activ-color;
+    background-size: contain;
+    background-origin: border-box;
+  }
+
+  &__user-agreement {
+    color: $activ-color;
+    text-decoration: underline;
+  }
+}

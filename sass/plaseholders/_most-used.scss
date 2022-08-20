@@ -1,0 +1,46 @@
+%attribute_normalise {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+%visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+
+%link_normalise {
+  text-decoration: none;
+  color: inherit;
+}
+
+%container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+%section_padding {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+%vertical_flex_position {
+  display: flex;
+  align-items: center;
+}
+
+%list-position-flex-mr {
+  display: flex;
+  & > :not(:last-child) {
+    margin-right: 30px;
+  }
+}

@@ -1,0 +1,55 @@
+.customer {
+  &__list {
+    @extend %attribute_normalise;
+    // width: 100%;
+    display: flex;
+
+    flex-wrap: wrap;
+    @media screen and (max-width: 1199px) {
+      margin: -15px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include list-position-flex-mr();
+    }
+
+    // @include list-position-flex-mr();
+  }
+
+  &__item {
+    @include centerFlex;
+    color: $social-link-color;
+    border: 1px solid $social-link-color;
+    border-radius: 4px;
+    height: 92px;
+    cursor: pointer;
+    transition: color $time-and-cubic,
+      border-color $time-and-cubic;
+    width: calc((100% - 2 * 30px) / 2);
+
+    &:hover {
+      color: $activ-color;
+      border-color: $activ-color;
+    }
+    @media screen and (min-width: 768px) {
+      width: calc(
+        (100% - 3 * 30px) / 3
+      );
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: calc(
+        (100% - 5 * 30px) / 6
+      );
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 15px;
+    }
+  }
+
+  &__svg {
+    width: 106px;
+    height: 60px;
+    fill: currentColor;
+  }
+}

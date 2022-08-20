@@ -1,0 +1,28 @@
+.social-list {
+    @extend %attribute_normalise;
+    @include list-position-flex-mr(10px);
+    display: flex;
+    margin-top: 16px;
+    
+    &__link{
+      @extend %link_normalise;
+      @include centerFlex();
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+  
+      color: $social-link-color;
+      transition: background-color $primamy-transition-time $cubic-function, color $primamy-transition-time $cubic-function;
+    
+        &:hover,&:focus{
+          background-color: $activ-color;
+          color: $white-in-progect;
+        }
+    }
+  
+    &__svg {
+      width: 20px;
+      height: 20px;
+      
+    }
+  }
